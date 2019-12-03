@@ -1,0 +1,15 @@
+.app-component {
+  .first-row {
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 10px;
+    .title {
+      align-self: start;
+    }
+    .allProjectBtn {
+        align-self: end;
+        margin-left: auto;
+    }
+  }
+}

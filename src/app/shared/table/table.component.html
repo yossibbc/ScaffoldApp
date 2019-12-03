@@ -1,0 +1,49 @@
+<div class="table">
+    <table mat-table [dataSource]="tableData" class="mat-elevation-z8" *ngIf="tableData && tableData.length>0">
+
+        <!--- Note that these columns can be defined in any order.
+        The actual rendered columns are set as a property on the row definition" -->
+
+        <!-- date Column -->
+        <ng-container matColumnDef="date">
+            <th mat-header-cell *matHeaderCellDef>Date </th>
+            <td mat-cell *matCellDef="let element"> {{element.date| date :'short'}} </td>
+        </ng-container>
+
+        <!-- propertyAddress Column -->
+        <ng-container matColumnDef="propertyAddress">
+            <th mat-header-cell *matHeaderCellDef> Property address </th>
+            <td mat-cell *matCellDef="let element"> {{element.propertyAddress}} </td>
+        </ng-container>
+
+        <!-- proprtysOwnerName Column -->
+        <ng-container matColumnDef="proprtysOwnerName">
+            <th mat-header-cell *matHeaderCellDef> Proprtys Owner Name </th>
+            <td mat-cell *matCellDef="let element"> {{element.ownerName}} </td>
+        </ng-container>
+
+        <!-- tenantsName Column -->
+        <ng-container matColumnDef="tenantsName">
+            <th mat-header-cell *matHeaderCellDef> Tenants Name </th>
+            <td mat-cell *matCellDef="let element"> {{element.tenantName}} </td>
+        </ng-container>
+
+        <!-- projectCategory Column -->
+        <ng-container matColumnDef="projectCategory">
+            <th mat-header-cell *matHeaderCellDef> Project Category </th>
+            <td mat-cell *matCellDef="let element"> {{element.projectCategory}} </td>
+        </ng-container>
+
+
+        <!-- Status Column -->
+        <ng-container matColumnDef="status">
+            <th mat-header-cell *matHeaderCellDef> Status </th>
+            <td mat-cell *matCellDef="let element">
+                <app-buttons [row]="element"></app-buttons>
+            </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+</div>

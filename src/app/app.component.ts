@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { DataService } from './core/services/data.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'scaffold-app';
+  constructor(private dataService: DataService) { }
+  getAllProducts() {
+    this.dataService.getProjects();
+   }
 }

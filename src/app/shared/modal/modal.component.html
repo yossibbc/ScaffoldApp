@@ -1,0 +1,10 @@
+<div class="modal">
+    <p fxLayout="row" fxLayoutAlign="center center">The Data</p>
+    <div class="modal-container">
+        <p>{{data.date | date :'short'}}</p>
+        <p>{{data.ownerName}}</p>
+        <p *ngIf="data.projectCategory">{{data.projectCategory}}</p>
+        <p>{{data.propertyAddress}}</p>
+        <p>{{data.tenantName}}</p>
+    </div>
+</div>
